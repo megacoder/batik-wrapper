@@ -1,0 +1,9 @@
+#!/bin/zsh
+ME=$(basename $0)
+BDIR=/opt/batik-1.7
+ACTION="${ME}"
+case "${ACTION}" in
+batik)	ACTION=rasterizer;;
+*)	;;
+esac
+exec ${JAVA_HOME}/bin/java -jar ${BDIR}/batik-${ACTION}.jar $@
